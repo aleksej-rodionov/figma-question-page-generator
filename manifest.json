@@ -1,0 +1,7 @@
+{
+  "name": "Question Page Generator Test",
+  "id": "question-page-generator-test",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}
