@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/code.ts --bundle --outfile=code.js --target=es2017"
   },
   "keywords": [],
   "author": "",
@@ -11,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "@figma/plugin-typings": "^1.125.0",
+    "esbuild": "^0.28.0",
     "typescript": "^6.0.3"
   }
 }

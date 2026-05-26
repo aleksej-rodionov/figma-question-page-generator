@@ -4,5 +4,6 @@
     "lib": ["es6"],
     "types": ["@figma/plugin-typings"],
     "skipLibCheck": true
-  }
+  },
+   "include": ["src/**/*.ts"]
 }
