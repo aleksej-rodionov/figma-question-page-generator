@@ -1,5 +1,3 @@
-import { loadFonts } from "./figma/fonts";
-import { setText } from "./figma/nodes";
 import { renderOnboardingScreen } from "./figma/renderer";
 import { OnboardingSelectionScreen } from "./types/onboarding";
 
