@@ -13,7 +13,7 @@ type OnboardingSelectionScreen = {
   }[];
 };
 
-figma.showUI(__html__, { width: 420, height: 420 });
+figma.showUI(__html__, { width: 560, height: 420 });
 
 const loadFonts = async (node: SceneNode & ChildrenMixin) => {
   const textNodes = node.findAll((node) => node.type === "TEXT") as TextNode[];
