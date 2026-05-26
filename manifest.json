@@ -3,5 +3,8 @@
   "id": "question-page-generator-test",
   "api": "1.0.0",
   "main": "code.js",
-  "editorType": ["figma"]
+  "ui": "ui.html",
+  "editorType": [
+    "figma"
+  ]
 }

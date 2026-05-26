@@ -1,0 +1,111 @@
+<!-- FIX: добавил все поля из OnboardingSelectionScreen -->
+
+<input id="pageKey" placeholder="pageKey" value="gender" />
+
+<input id="preTitle" placeholder="Pre title" value="About you" />
+
+<input id="title" placeholder="Title" value="Choose your gender" />
+
+<input
+  id="description"
+  placeholder="Description"
+  value="This helps us personalize your plan"
+/>
+
+<select id="mode">
+  <option value="singleSelect">singleSelect</option>
+  <option value="multiselect">multiselect</option>
+</select>
+
+<hr />
+
+<!-- FIX: answer 1 -->
+
+<input id="answer1Emoji" placeholder="Emoji" value="👨" />
+<input id="answer1Title" placeholder="Answer 1 title" value="Male" />
+<input
+  id="answer1Description"
+  placeholder="Answer 1 description"
+  value="Personalized plan for men"
+/>
+<input id="answer1Label" placeholder="Answer 1 label" value="Popular" />
+
+<hr />
+
+<!-- FIX: answer 2 -->
+
+<input id="answer2Emoji" placeholder="Emoji" value="👩" />
+<input id="answer2Title" placeholder="Answer 2 title" value="Female" />
+<input
+  id="answer2Description"
+  placeholder="Answer 2 description"
+  value="Personalized plan for women"
+/>
+<input id="answer2Label" placeholder="Answer 2 label" value="" />
+
+<button id="generate">Generate</button>
+
+<script>
+  document.getElementById('generate').onclick = () => {
+    parent.postMessage(
+      {
+        pluginMessage: {
+          type: 'generate',
+
+          // FIX: теперь отправляем полный screen object
+          screen: {
+            pageKey: document.getElementById('pageKey').value,
+            preTitle: document.getElementById('preTitle').value,
+            title: document.getElementById('title').value,
+            description: document.getElementById('description').value,
+            mode: document.getElementById('mode').value,
+
+            items: [
+              {
+                value: 'male',
+                emoji: document.getElementById('answer1Emoji').value,
+                title: document.getElementById('answer1Title').value,
+                description: document.getElementById('answer1Description').value,
+                label: document.getElementById('answer1Label').value,
+              },
+
+              {
+                value: 'female',
+                emoji: document.getElementById('answer2Emoji').value,
+                title: document.getElementById('answer2Title').value,
+                description: document.getElementById('answer2Description').value,
+                label: document.getElementById('answer2Label').value,
+              },
+            ],
+          },
+        },
+      },
+      '*',
+    );
+  };
+</script>
+
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 16px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  hr {
+    margin: 16px 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+  }
+</style>
